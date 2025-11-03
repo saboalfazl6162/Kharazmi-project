@@ -20,8 +20,8 @@ project
 
 1. **Clone the repository**
 ```bash
-   git clone https://github.com/
-   cd
+git clone https://github.com/saboalfazl6162/Kharazmi-project
+cd
    ```
 
 2. **Create a virtual environment**
@@ -32,7 +32,7 @@ project
 
 3. **Install dependencies**
 ```bash
-   pip install -r requirements.txt
+pip install -r requirements.txt
    ```
 
 4. **Configure the application**
@@ -42,7 +42,7 @@ project
 
 5. **Initialize the database**
 ```bash
-    python manage.py migrate
+python manage.py migrate
    ```
 
 ## Running the Application
