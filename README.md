@@ -24,8 +24,8 @@ Project for the Kharazmi Festival, a blog for writing posts for lessons and ques
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/saboalfazl6162/Kharazmi-project
-cd
+git clone https://github.com/aboalfazlH/Kharazmi-project
+cd Kharazmi-project
    ```
 
 2. **Create a virtual environment**
