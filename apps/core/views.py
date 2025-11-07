@@ -7,7 +7,11 @@ from apps.users.models import CustomUser
 class HomePageView(TemplateView):
     template_name = "index.html"
     
+class AboutPageView(TemplateView):
+    template_name = "about_us.html"
 
+class ContactPageView(TemplateView):
+    template_name = "contact_us.html"
 
 
 class GlobalSearchView(TemplateView):
