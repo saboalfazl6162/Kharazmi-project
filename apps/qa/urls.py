@@ -3,5 +3,5 @@ from .views import QaMainView
 
 
 urlpatterns = [
-    path('',QaMainView.as_view())
+    path('',QaMainView.as_view(),name="qa-page")
 ]

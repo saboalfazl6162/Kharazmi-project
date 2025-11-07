@@ -1,11 +1,18 @@
 @font-face {
-    font-family: Vazir;
-    src: url(..\fonts\Vazir.ttf);
+  font-family: Vazir;
+  src: url(..\fonts\Vazir.ttf);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Vazir;
-    transition: all ease 2s;
+  margin: 0;
+  padding: 0;
+  font-family: Vazir;
+  transition: all ease 2s;
+  scroll-behavior: smooth;
+}
+
+.nav {
+  list-style-type: none;
+  color: black;
+  display: inline-flex;
 }
