@@ -18,13 +18,17 @@ class SignUpView(FormView):
     def form_valid(self, form):
         username = form.cleaned_data['username']
         email = form.cleaned_data['email']
-
+        phone_number = form.cleaned_data['phone_number']
         if CustomUser.objects.filter(username=username).exists():
             messages.error(self.request, "این نام کاربری قبلاً انتخاب شده است.")
             return redirect('signup')
 
-        if CustomUser.objects.filter(email=email).exists():
+        if CustomUser.objects.filter(email=email).exists() and email!='':
             messages.error(self.request, "این ایمیل قبلاً ثبت شده است.")
+            return redirect('signup')
+
+        if CustomUser.objects.filter(phone_number=phone_number).exists() and phone_number!='':
+            messages.error(self.request, "این شماره قبلاً ثبت شده است.")
             return redirect('signup')
 
         user = CustomUser.objects.create_user(
@@ -33,7 +37,8 @@ class SignUpView(FormView):
             password=form.cleaned_data['password'],
             first_name=form.cleaned_data['first_name'],
             last_name=form.cleaned_data['last_name'],
-            phone_number=form.cleaned_data['phone_number']
+            phone_number=form.cleaned_data['phone_number'],
+            main_point =form.cleaned_data['main_point'],
         )
         user.save()
         login_user = authenticate(self.request, username=user.username,password=form.cleaned_data['password'],)
@@ -58,7 +63,6 @@ class LoginView(FormView):
     success_url = reverse_lazy('home-page')
 
     def form_valid(self, form):
-        """بررسی نام کاربری / ایمیل / شماره تلفن و ورود کاربر"""
         username = form.cleaned_data.get('username')
         email = form.cleaned_data.get('email')
         phone = form.cleaned_data.get('phone_number')

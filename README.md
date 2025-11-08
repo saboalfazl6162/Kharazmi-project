@@ -7,7 +7,6 @@ Project for the Kharazmi Festival, a blog for writing posts for lessons and ques
 - Write post for lessons
 - Ask question for lessons
 
-
 ## Tech Stack
 
 - **Backend**: Python Django
