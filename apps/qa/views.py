@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView,CreateView
 from .models import Question,Answer
+from .forms import AnswerForm,QuestionForm
+from django.urls import reverse_lazy
 
 class QaMainView(TemplateView):
     template_name = "qa_page.html"
@@ -13,6 +15,5 @@ class QaMainView(TemplateView):
 class QuestionCreateView(CreateView):
     model = Question
     template_name = "question_create.html"
-    def form_valid(self, form):
-        cleaned_data = form.cleaned_data
-        return super().form_valid(form)
+    form_class = QuestionForm
+    success_url = reverse_lazy("qa-page")
