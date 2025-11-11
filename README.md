@@ -1,4 +1,4 @@
-# Kharazmi Project
+# Kharazmi Project | پروژه جشنواره خوارزمی
 
 Project for the Kharazmi Festival, a blog for writing posts for lessons and questions and answers to solve lesson problems
 
@@ -6,7 +6,8 @@ Project for the Kharazmi Festival, a blog for writing posts for lessons and ques
 
 - Write post for lessons
 - Ask question for lessons
-
+- sign up on Different axes
+  
 ## Tech Stack
 
 - **Backend**: Python Django
@@ -70,3 +71,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 - Built with Django
 - Special thanks to all contributors
+
+ 
