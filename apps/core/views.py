@@ -5,8 +5,10 @@ from apps.blog.models import Post
 from apps.users.models import CustomUser
 
 class HomePageView(TemplateView):
-    template_name = "index.html"
-    
+    def get_template_names(self):
+        if self.request.user.is_authenticated:
+            return ["home.html"]
+        return ["index.html"]    
 class AboutPageView(TemplateView):
     template_name = "about_us.html"
 

@@ -50,6 +50,10 @@ class CustomUser(AbstractUser):
     is_verified = models.BooleanField(default=False, verbose_name=_("تأیید شده"))
     confirmation_comments = models.BooleanField(default=False,verbose_name="تائیدی بودن نظرات",help_text="اگر فعال باشد نظرات با تائید شما ارسال می شوند")
     main_point = models.ForeignKey(MainPoint,on_delete=models.CASCADE,blank=True,null=True)
-
+    
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+    
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('user-profile', kwargs={'username': self.username})
