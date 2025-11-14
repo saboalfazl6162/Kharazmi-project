@@ -30,7 +30,8 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 THIRD_PARTY_APPS = [
-    "django_summernote"
+    "django_summernote",
+    "dynamic_forms"
 ]
 
 LOCAL_APPS = [
