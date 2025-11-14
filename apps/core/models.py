@@ -1,5 +1,5 @@
 from django.db import models
-from apps.blog.models import Post
+from apps.news.models import Post
 from apps.users.models import CustomUser
 
 class Comment(models.Model):

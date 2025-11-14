@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.shortcuts import redirect,render
 from .forms import SignUpForm,LoginForm
 from .models import CustomUser
-from apps.blog.models import Post
+from apps.news.models import Post
 
 
 class SignUpView(FormView):

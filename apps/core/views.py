@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.views.generic import TemplateView
-from apps.blog.models import Post
+from apps.news.models import Post
 from apps.users.models import CustomUser
 
 class HomePageView(TemplateView):
