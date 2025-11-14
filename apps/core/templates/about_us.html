@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
+{% block meta %}
+    <meta name="description" content="سایت جشنواره خوارزمی در مورد جشنواره خوارزمِی،محور هایی که داره و اخبارش صحبت میکنه.این صفحه درباره ما این سایت است">
+    <meta name="keywords" content="خوارزمی,نوجوان خوارزمی,برنامه نویسی,جشنواره خوارزمی">
+    <meta name="author" content="{% include 'authors.html' %}">  {#add authors.html#}
+    <meta name="robots" content="index,follow">
+{% endblock meta %}
+    
 {% block title %}
 درباره ما
 {% endblock title %}

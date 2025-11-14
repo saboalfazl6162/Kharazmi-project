@@ -16,7 +16,7 @@
     {% endblock meta %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if user.is_authenticated %}جشنواره خوارزمی{% else %} فرهنگسرای نو اندیشان {% endif %}| {% block title %}{% endblock title %}</title>
+    <title>{% if user.is_authenticated %}فرهنگسرای نو اندیشان{% else %} جشنواره خوارزمی {% endif %} | {% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block styles %}
     <style>

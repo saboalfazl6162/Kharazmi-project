@@ -15,7 +15,7 @@ class PostAdmin(SummernoteModelAdmin):
         ("اطلاعات اصلی", {
             'classes':("wide",),
             'fields': (
-                'title','description','thumbnail','author','article_course'
+                'title','description','thumbnail','author','post_mainpoint'
             ),
         }),
         ("تاریخ ها(فقط خواندن)", {
