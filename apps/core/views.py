@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from django.views.generic import TemplateView
 from apps.news.models import Post
-from apps.users.models import CustomUser
+from apps.users.models import CustomUser,MainPoint
 
 class HomePageView(TemplateView):
     def get_template_names(self):
@@ -25,8 +25,10 @@ class GlobalSearchView(TemplateView):
 
         posts = Post.objects.none()
         users = CustomUser.objects.none()
+        mainpoints = MainPoint.objects.none()
 
         if query:
+            mainpoints = MainPoint.objects.all()
             posts = Post.objects.filter(
                 Q(title__icontains=query) |
                 Q(short_description__icontains=query) |
@@ -35,7 +37,6 @@ class GlobalSearchView(TemplateView):
                 Q(meta_description__icontains=query) |
                 Q(meta_keywords__icontains=query)
             )
-
             users = CustomUser.objects.filter(
                 Q(username__icontains=query) |
                 Q(first_name__icontains=query) |
@@ -51,9 +52,24 @@ class GlobalSearchView(TemplateView):
         user_page_number = self.request.GET.get('user_page')
         user_page_obj = user_paginator.get_page(user_page_number)
 
-        context['query'] = query
-        context['post_page_obj'] = post_page_obj
-        context['user_page_obj'] = user_page_obj
+        mainpoint_paginator = Paginator(mainpoints, 10)
+        mainpoint_page_number = self.request.GET.get('mainpoint_page')
+        mainpoint_page_obj = mainpoint_paginator.get_page(mainpoint_page_number)
+
+        mainpoints_with_posts = []
+        for mp in mainpoint_page_obj:
+            related_posts = posts.filter(post_mainpoint=mp)
+            mainpoints_with_posts.append({
+                'mainpoint': mp,
+                'posts': related_posts
+            })
+
+        context.update({
+            'query': query,
+            'post_page_obj': post_page_obj,
+            'user_page_obj': user_page_obj,
+            'mainpoints_with_posts': mainpoints_with_posts,
+            'mainpoint_page_obj': mainpoint_page_obj,
+        })
 
         return context
-

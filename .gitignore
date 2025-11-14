@@ -133,3 +133,4 @@ GitHub.sublime-settings
 # Visual Studio Code # 
 .vscode/* 
 .history
+authors.html
