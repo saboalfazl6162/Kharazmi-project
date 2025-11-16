@@ -1,5 +1,5 @@
 body {
-    background-image: url('image/images\ \(1\).jpg');
+    background-image: url('../images/signup.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 720px;
@@ -22,38 +22,38 @@ body {
 }
 .category-select {
     width: 505px;
-    margin: 10px 35%;
+    margin: 10px 30%;
 }
 
 .pes1 {
-    margin: 100px 35%;
+    margin: 100px 30%;
 }
 .pes2 {
-    margin: 200px 35%;
+    margin: 200px 30%;
 }
 .pes3 {
-    margin: 300px 35%;
+    margin: 300px 30%;
 }
 .pes4 {
-    margin: 400px 35%;
+    margin: 400px 30%;
 }
 .pes5 {
-    margin: 500px 35%;
+    margin: 500px 30%;
 }
 .pes6 {
-    margin: 500px 35%;
+    margin: 500px 30%;
 }
 .pes7 {
-    margin: 600px 35%;
+    margin: 600px 30%;
 }
 .pes8 {
-    margin: 700px 35%;
+    margin: 700px 30%;
 }
 
 
 .ped {
     position: absolute;
-    margin: 800px 45%;
+    margin: 800px 40%;
     width: 250px;
     height: 50px;
     border: 2px solid black;
