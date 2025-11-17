@@ -1,15 +1,8 @@
-{% extends 'base.html' %}
-{% block title %}
-ثبت نام
-{% endblock title %}
-{% block meta %}
-{% endblock meta %}
-{% block styles %}
-{% endblock styles %}
+{% extends 'signup.html' %}
 {% block content %}
-<form method="POST">
+<form method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">ورود</button>
+    <input class="ped" type="submit" style="margin: 500px 40%;" value="➣">
 </form>
 {% endblock content %}

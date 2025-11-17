@@ -10,12 +10,16 @@
 </head>
 
 <body>
+    
+    {% block content %}
     <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
         <div class="signup-form">
-            {{ form.as_p }}
         </div>
         <input class="ped" type="submit" value="➣">
-    </form>
+    </form>        
+    {% endblock content %}
 </body>
 
 </html>

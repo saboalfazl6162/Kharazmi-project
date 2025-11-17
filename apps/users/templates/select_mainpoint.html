@@ -1,6 +1,9 @@
-<h1>لطفا ابتدا محور مد نظر را انتخاب کنید</h1>
+{% extends 'signup.html' %}
+
+{% block content %}
 <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">انتخاب محور</button>
+{% csrf_token %}
+{{ form.as_p }}
+<input class="ped" type="submit" style="margin: 100px 40%;" value="➣">
 </form>
+{% endblock content %}

@@ -3,7 +3,7 @@ from .views import SignUpView,LoginView,LogoutView,ProfileView,UserDetailView,Se
 
 
 urlpatterns = [
-    path('signup/select_axis/',SelectMainPointView.as_view(),name="select-mainpoint"),
+    path('signup/select-axis/',SelectMainPointView.as_view(),name="select-mainpoint"),
     path("signup/",SignUpView.as_view(),name="signup"),
     path("login/",LoginView.as_view(),name="login"),
     path("logout/",LogoutView.as_view(),name="logout"),

@@ -39,7 +39,7 @@ class MainPointForm(forms.Form):
         label="",
         empty_label="انتخاب محور",
         widget=forms.Select(attrs={
-            "class": "pes category-select",
+            "class": "pes pes category-select",
         })
     )
     def __init__(self, *args, **kwargs):
@@ -54,46 +54,46 @@ class SignUpForm(forms.Form):
         label="",
         required=False,
         widget=forms.Select(attrs={
-            "class": "pes category-select",
+            "class": "pes pes category-select",
         })
     )
     username = forms.CharField(
         label='',
         max_length=110,
         validators=[RegexValidator(r"^[\w.@+-]+$")],
-        widget=forms.TextInput(attrs={"placeholder": _("نام کاربری"),"class":"pes pes1"}),
+        widget=forms.TextInput(attrs={"placeholder": _("نام کاربری"),"class":"pes pes pes pes1"}),
     )
     first_name = forms.CharField(
         max_length=50,
-        widget=forms.TextInput(attrs={"placeholder": _("نام"),"class":"pes pes2"}),
+        widget=forms.TextInput(attrs={"placeholder": _("نام"),"class":"pes pes pes pes2"}),
         required=False,
         label='',
     )
     last_name = forms.CharField(
         max_length=50,
-        widget=forms.TextInput(attrs={"placeholder": _("نام خانوادگی"),"class":"pes pes3"}),
+        widget=forms.TextInput(attrs={"placeholder": _("نام خانوادگی"),"class":"pes pes pes pes3"}),
         required=False,
         label='',
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={"placeholder": _("ایمیل"),"class":"pes pes4"}),
+        widget=forms.EmailInput(attrs={"placeholder": _("ایمیل"),"class":"pes pes pes pes4"}),
         required=False,
         label='',
     )
     phone_number = forms.CharField(
         max_length=15,
         validators=[RegexValidator(r"^\+?\d{10,15}$")],
-        widget=forms.TextInput(attrs={"placeholder": _("شماره تلفن"),"class":"pes pes6"}),
+        widget=forms.TextInput(attrs={"placeholder": _("شماره تلفن"),"class":"pes pes pes pes6"}),
         required=False,
         label='',
     )
     password = forms.CharField(
         label='',
-        widget=forms.PasswordInput(attrs={"placeholder": _("گذرواژه"),"class":"pes pes7"}),
+        widget=forms.PasswordInput(attrs={"placeholder": _("گذرواژه"),"class":"pes pes pes pes7"}),
     )
     password_confirm = forms.CharField(
         label='',
-        widget=forms.PasswordInput(attrs={"placeholder": _("تایید گذرواژه",),"class":"pes pes8"}),
+        widget=forms.PasswordInput(attrs={"placeholder": _("تایید گذرواژه",),"class":"pes pes pes pes8"}),
     )
     def __init__(self, *args, **kwargs):
         main_point = kwargs.pop('mainpoint', None)
@@ -118,26 +118,26 @@ class SignUpForm(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField(
         required=False,
-        label=_("username"),
+        label='',
         max_length=110,
         validators=[RegexValidator(r"^[\w.@+-]+$")],
-        widget=forms.TextInput(attrs={"placeholder": _("نام کاربری")}),
+        widget=forms.TextInput(attrs={"placeholder": _("نام کاربری"),"class":"pes pes1"}),
     )
     phone_number = forms.CharField(
         max_length=15,
         validators=[RegexValidator(r"^\+?\d{10,15}$")],
-        widget=forms.TextInput(attrs={"placeholder": _("شماره تلفن")}),
+        widget=forms.TextInput(attrs={"placeholder": _("شماره تلفن"),"class":"pes pes2"}),
         required=False,
-        label=_("شماره تلفن"),
+        label="",
     )
     email = forms.EmailField(
-        widget=forms.EmailInput(attrs={"placeholder": _("ایمیل")}),
+        widget=forms.EmailInput(attrs={"placeholder": _("ایمیل"),"class":"pes pes3"}),
         required=False,
-        label=_("ایمیل"),
+        label='',
     )
     password = forms.CharField(
-        label=_("گذرواژه"),
-        widget=forms.PasswordInput(attrs={"placeholder": _("گذرواژه")}),
+        label='',
+        widget=forms.PasswordInput(attrs={"placeholder": _("گذرواژه"),"class":"pes pes4"}),
     )
 
     def clean(self):

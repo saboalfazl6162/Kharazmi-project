@@ -25,7 +25,7 @@ class SignUpView(FormView):
     template_name = 'signup.html'
     form_class = SignUpForm
     success_url = reverse_lazy('home-page')
-
+    
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         
@@ -79,7 +79,11 @@ class SignUpView(FormView):
     def form_invalid(self, form):
         messages.error(self.request, "لطفاً خطاهای فرم را بررسی کنید.")
         return super().form_invalid(form)
-
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.COOKIES.get('selected_main_point'):
+            return redirect('select-mainpoint')
+        return super().dispatch(request, *args, **kwargs)
 
 
 class LoginView(FormView):
