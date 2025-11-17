@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-بلاگ
+اخبار
 {% endblock title %}
 
 {% block meta %}
@@ -20,7 +20,7 @@
 {% endblock styles %}
 
 {% block content %}
-<h1>پست‌های بلاگ</h1>
+<h1>اخبار</h1>
 
 <form method="get" action="" class="search-form">
   <input type="text" name="query" placeholder="جستجو..." value="{{ request.GET.query }}">
@@ -34,7 +34,7 @@
     <p>{{ post.description|striptags|truncatewords:20 }}</p>
   </li>
   {% empty %}
-  <p>پستی یافت نشد</p>
+  <p>خبری یافت نشد</p>
   <a href="{% url 'home-page' %}">بازگشت به صفحه اصلی</a>
   {% endfor %}
 </ul>
