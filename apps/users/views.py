@@ -63,7 +63,7 @@ class SignUpView(FormView):
             first_name=form.cleaned_data['first_name'],
             last_name=form.cleaned_data['last_name'],
             phone_number=form.cleaned_data['phone_number'],
-            main_point =form.cleaned_data['main_point'],
+            main_point = MainPoint.objects.get(id=int(self.request.COOKIES.get('selected_main_point')))
         )
         user.save()
         login_user = authenticate(self.request, username=user.username,password=form.cleaned_data['password'],)

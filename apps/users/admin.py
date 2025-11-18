@@ -41,7 +41,7 @@ class CustomUserAdmin(UserAdmin, SummernoteModelAdmin):
         }),
         ("اطلاعات پیشرفته", {
             "classes": ("collapse",),
-            "fields": ("is_verified", "is_staff", "is_active", "is_superuser"),
+            "fields": ("is_verified", "is_staff", "is_active", "is_superuser","groups","user_permissions"),
         }),
         ("تاریخ‌ها", {
             "classes": ("collapse",),
