@@ -10,7 +10,6 @@
                 </a></li>
             <li><a class="" href="{% url 'home-page' %}">صفحه اصلی</a></li>
             <li><a class="" href="{% url 'blog-page' %}">بلاگ</a></li>
-            <li><a class="" href="{% url 'qa-page' %}">پرسش و پاسخ</a></li>
 
             {% if user.is_authenticated %}
             <li><a class="" href="{% url 'my-profile' %}">{{ user }}</a></li>
